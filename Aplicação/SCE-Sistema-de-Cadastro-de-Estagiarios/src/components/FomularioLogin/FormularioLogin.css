@@ -1,0 +1,34 @@
+.form-login{
+    width: 40%;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0px auto !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 50px  !important;
+    margin-top: 25px !important;
+  }
+  
+  .form-login input{
+    margin: 5px 0px 5px 0px;
+    width: 95%;
+    box-sizing: border-box;
+  }
+  
+  .form-login label{
+    margin: 5px;
+  }
+  
+  .form-login button{
+    display: block;
+    margin: 0px auto;
+    width: 40%;
+  }
+
+  .titulo-form{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+  }
