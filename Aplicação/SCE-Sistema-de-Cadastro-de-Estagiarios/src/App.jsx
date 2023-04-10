@@ -1,27 +1,15 @@
-import './App.css'
-import Home from './pages/Home'
-import Cadastro from './pages/Cadastro'
-import Login from './pages/Login'
+import './App.css';
 import 'antd/dist/reset.css';
 import 'antd/dist/antd.js';
+import { useContext } from 'react';
+import { AuthContext } from './context';
+import PrivateRoutes from './routes/privates.routes';
+import PublicRoutes from './routes/public.routes';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
+  const { isAuth } = useContext(AuthContext);
 
-  return (
-    <div className="App">
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' exact element={<Home/>}></Route>
-      <Route path='/cadastro' element={<Cadastro/>}></Route>
-      <Route path='/login' element={<Login/>}></Route>
-    </Routes>
-  </BrowserRouter>
-  
-
-
-    </div>
-  )
+  return isAuth ? <PrivateRoutes /> : <PublicRoutes />;
 }
 
-export default App
+export default App;

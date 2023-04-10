@@ -1,32 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Row, Col } from "antd";
+import { Menu, Row, Col, Button } from "antd";
 import icon from '../../assets/logo.png';
 import './Menu.css';
-
+import { useContext } from 'react';
+import { AuthContext } from '../../context';
 
 import {
     LoginOutlined,
-    FormOutlined
+    FormOutlined,
+    UserOutlined,
+    LogoutOutlined
 } from '@ant-design/icons';
 
-const menuItems = [
-    {
-        key: 'Cadastro',
-        icon: <FormOutlined />,
-        label: (<Link to="/cadastro">Cadastro</Link>),
-    },
-    {
-        key: 'Login',
-        icon: <LoginOutlined />,
-        label: (<Link to="/login">Login</Link>),
-    }
-        
-];
 
-const MenuContent = () => (
+
+const MenuContent = () => {
+
+    const { isAuth, handleLogout } = useContext(AuthContext);
+
+    const menuItemsNotLogged = [
+        {
+            key: 'Cadastro',
+            icon: <FormOutlined />,
+            label: (<Link to="/cadastro">Cadastro</Link>),
+        },
+        {
+            key: 'Login',
+            icon: <LoginOutlined />,
+            label: (<Link to="/login">Login</Link>),
+        }
+            
+    ];
+    
+    const menuItemsLogged = [
+        {
+            key: 'Estágiarios',
+            icon: <UserOutlined />,
+            label: (<Link to="/estagiarios">Estágiarios</Link>),
+        },
+        {
+            key: 'Login',
+            label: (<Button style={{backgroundColor: "#e52222", color: "white", borderColor: "#e52222"}} onClick={()=>{handleLogout()}} icon={<LogoutOutlined/>} >Sair</Button>),
+        }
+            
+    ];
+
+
+    return (
     <div className="menu">
         <Row>
+            
             <Col span={16}>
                 <Link to="/">
                     <img className="logo-menu" src={icon} alt="Icone" width={50} height={50} />
@@ -35,10 +59,12 @@ const MenuContent = () => (
             </Col>
 
             <Col span={8}>
-                <Menu items={menuItems} mode="horizontal" theme="dark" />
+                {!isAuth && <Menu items={menuItemsNotLogged} mode="horizontal" theme="dark" />}
+                {isAuth && <Menu items={menuItemsLogged} mode="horizontal" theme="dark" />}
             </Col>
         </Row>
     </div>
-);
+)
+}
 
 export default MenuContent;
