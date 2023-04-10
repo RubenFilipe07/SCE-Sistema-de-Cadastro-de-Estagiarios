@@ -14,9 +14,9 @@ const ListaEstagiario = () => {
 
     const [estagiarios, setEstagiarios] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
-    const[idSelecionado, setIdSelecionado] = useState(0);
+    const [idSelecionado, setIdSelecionado] = useState(0);
 
-   const getEstagiarios = () => {
+    const getEstagiarios = () => {
         axios.get('http://localhost:8080/estagiarios', {
             headers: {
                 'Content-Type': 'application/json',
@@ -30,9 +30,9 @@ const ListaEstagiario = () => {
     }
 
     useEffect(() => {
-getEstagiarios();
+        getEstagiarios();
 
-       
+
     }, []);
 
     const deletaEstagiario = (id) => {
@@ -53,89 +53,88 @@ getEstagiarios();
         setIdSelecionado(id);
         setModalVisible(true);
 
-      };
-
-      const handleCancel = () => {
-        setModalVisible(false);
-      };
-
-    
-
-        const columns = [
-            {
-                title: 'Nome',
-                dataIndex: 'nome',
-                key: 'nome',
-            },
-            {
-                title: 'Email',
-                dataIndex: 'email',
-                key: 'email',
-            },
-            {
-                title: 'CPF',
-                dataIndex: 'cpf',
-                key: 'cpf',
-            },
-            {
-                title: 'email',
-                dataIndex: 'email',
-                key: 'email',
-            },
-            {
-                title: 'Telefone',
-                dataIndex: 'telefone',
-                key: 'telefone',
-            },
-            {
-                title: 'Curso',
-                dataIndex: 'curso',
-                key: 'curso',
-            },
-            {
-                title: 'Periodo',
-                dataIndex: 'periodo',
-                key: 'periodo',
-            },
-            {
-                title: 'Ação',
-                key: 'acao',
-                render: (record, index) => < div className="btn-wrap"
-                    key={index} >
-                    <Space size="small" >
-                    <Popconfirm title="Tem certeza?" cancelText="Cancelar" onConfirm={() => deletaEstagiario(record.id)}>
-                            <Button type="primary" danger >
-                                <DeleteOutlined />
-                                Apagar
-                            </Button>
-                        </Popconfirm>
-
-                        <Button type="primary" onClick={() => editaEstagiario(record.id)}>
-                            <EditOutlined />
-                            Editar
-                        </Button>
-                    </Space>
-                </div >
-            }
-
-
-        ];
-
-
-
-
-        return (
-            <>
-            <Table columns={columns} dataSource={estagiarios.filter(estagiario => estagiario.empresa_id === user.id)}/>
-            <ModalEditaEstagiario
-  visible={modalVisible}
-  handleCancel={handleCancel}
-    id={idSelecionado}
-/>
-            </>
-
-        );
-
     };
 
-    export default ListaEstagiario;
+    const handleCancel = () => {
+        setModalVisible(false);
+    };
+
+
+
+    const columns = [
+        {
+            title: 'Nome',
+            dataIndex: 'nome',
+            key: 'nome',
+        },
+        {
+            title: 'Email',
+            dataIndex: 'email',
+            key: 'email',
+        },
+        {
+            title: 'CPF',
+            dataIndex: 'cpf',
+            key: 'cpf',
+        },
+        {
+            title: 'email',
+            dataIndex: 'email',
+            key: 'email',
+        },
+        {
+            title: 'Telefone',
+            dataIndex: 'telefone',
+            key: 'telefone',
+        },
+        {
+            title: 'Curso',
+            dataIndex: 'curso',
+            key: 'curso',
+        },
+        {
+            title: 'Periodo',
+            dataIndex: 'periodo',
+            key: 'periodo',
+        },
+        {
+            title: 'Ação',
+            key: 'acao',
+            render: (record, index) => < div className="btn-wrap"
+                key={index} >
+                <Space size="small" >
+                    <Popconfirm title="Tem certeza?" cancelText="Cancelar" onConfirm={() => deletaEstagiario(record.id)}>
+                        <Button type="primary" danger >
+                            <DeleteOutlined />
+                            Apagar
+                        </Button>
+                    </Popconfirm>
+
+                    <Button type="primary" onClick={() => editaEstagiario(record.id)}>
+                        <EditOutlined />
+                        Editar
+                    </Button>
+                </Space>
+            </div >
+        }
+
+
+    ];
+
+
+
+
+    return (
+        <div className='lista-estagiario'>
+            <Table columns={columns} dataSource={estagiarios.filter(estagiario => estagiario.empresa_id === user.id)} />
+            <ModalEditaEstagiario
+                visible={modalVisible}
+                handleCancel={handleCancel}
+                id={idSelecionado}
+            />
+        </div>
+    );
+
+};
+
+export default ListaEstagiario;

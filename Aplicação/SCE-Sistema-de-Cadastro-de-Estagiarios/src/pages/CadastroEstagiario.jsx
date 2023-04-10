@@ -4,7 +4,7 @@ import FooterContent from "../components/Footer/Footer";
 
 import { Layout} from "antd";
 import MenuContent from "../components/Menu/MenuContent";
-import ListaEstagiario from "../components/ListaEstagiario/ListaEstagiario";
+import CadastroEstagiario from "../components/CadastroEstagiario/CadastroEstagiario";
 
 
 const { Header, Content, Footer } = Layout;
@@ -16,7 +16,7 @@ const Home = () => (
             </Header>
 
             <Content>
-                <ListaEstagiario />
+                <CadastroEstagiario />
             </Content>
 
             <Footer>

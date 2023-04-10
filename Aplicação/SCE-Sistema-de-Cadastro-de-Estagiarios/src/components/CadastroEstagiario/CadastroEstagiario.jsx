@@ -26,7 +26,7 @@ const CadastroEstagiario = () => {
     };
 
     return (
-        <Form className='form-cadastro' onFinish={handleSubmit} form={form}>
+        <Form className='form-cadastro cadastro-estagiarios' onFinish={handleSubmit} form={form}>
             <h1 className='titulo-form'>Cadastro</h1>
 
             <Form.Item

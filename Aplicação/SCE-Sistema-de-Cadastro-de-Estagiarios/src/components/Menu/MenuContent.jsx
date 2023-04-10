@@ -10,7 +10,8 @@ import {
     LoginOutlined,
     FormOutlined,
     UserOutlined,
-    LogoutOutlined
+    LogoutOutlined,
+    UserAddOutlined
 } from '@ant-design/icons';
 
 
@@ -35,9 +36,14 @@ const MenuContent = () => {
     
     const menuItemsLogged = [
         {
-            key: 'Estágiarios',
+            key: 'Gerenciar Estágiarios',
             icon: <UserOutlined />,
-            label: (<Link to="/estagiarios">Estágiarios</Link>),
+            label: (<Link to="/estagiarios">Gerenciar Estágiarios</Link>),
+        },
+        {
+            key: 'Cadastrar Estágiarios',
+            icon: <UserAddOutlined />,
+            label: (<Link to="/cadastroEstagiarios">Cadastrar Estágiarios</Link>),
         },
         {
             key: 'Login',
