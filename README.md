@@ -90,6 +90,11 @@ Quando uma empresa está cadastrada e devidamente autenticada, ela consegue cada
   <a href="https://ant.design/docs/spec/icon">
     <img src="https://img.shields.io/badge/Ant%20design%20Icons-007DB8?style=for-the-badge&logo=antdesign&logoColor=white" />
   </a> <br/>
+  
+<a href="https://www.npmjs.com/package/jwt-decode">
+  <img src="https://img.shields.io/badge/JWT%20DECODE-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"/>
+</a> <br/>
+
  
   
  <h3>Back-end</h3>
