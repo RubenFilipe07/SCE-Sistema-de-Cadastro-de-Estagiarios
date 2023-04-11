@@ -16,11 +16,11 @@ Quando uma empresa está cadastrada e devidamente autenticada, ela consegue cada
 <h5>Para rodar o projeto React</h5>
 <ol>
   <li>Certifique-se de ter o node.js instalado na sua máquina, caso não tenha, baixe aqui: <a href="https://nodejs.org/en/">nodejs.org</a></li>
-  <li>Dentro do projeto digite <code>npm i</code> no terminal para baixar as dependências</li>
-  <li>Digite <code>npm start</code> para iniciar o servidor e o acesse pelo link: <code>http://localhost:3000/</code></li>
+  <li>Na raiz do projeto <code>Aplicação/SCE-Sistema-de-Cadastro-de-Estagiarios</code> digite <code>npm i</code> no terminal para baixar as dependências</li>
+  <li>Digite <code>npm run dev</code> para iniciar o servidor e o acesse pelo link: <code>http://localhost:3000/</code></li>
 </ol>
 
-<h3>arquivo .ENV</h3>
+<h5>arquivo .ENV</h5>
 <code>API_KEY:</code>: Chave de autenticação que autoriza a utilização da API.<br/>
 <code>VITE_API_KEY :</code>: Chave de autenticação autoriza o request da API do lado do cliente.<br/>
 <code>DATABASE_URL</code>:  URL que faz conexão com banco de dados. <br/>
