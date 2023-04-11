@@ -9,7 +9,7 @@ const FormularioCadastro = () => {
     const handleSubmit = async (values) => {
 
         try {
-            const response = await axios.post('http://localhost:8080/cadastro', values, {
+            const response = await axios.post('https://api-sce.fly.dev/cadastro', values, {
                 headers: {
                     'Content-Type': 'application/json',
                     'api-key': import.meta.env.VITE_API_KEY,

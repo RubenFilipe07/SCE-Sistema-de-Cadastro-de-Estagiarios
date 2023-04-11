@@ -13,7 +13,7 @@ const ModalEditaEstagiario = (props) => {
 
   const getEstagiario = () => {
     axios
-      .get(`http://localhost:8080/estagiarios/${id}`, {
+      .get(`https://api-sce.fly.dev/estagiarios/${id}`, {
         headers: {
           "Content-Type": "application/json",
           "api-key": import.meta.env.VITE_API_KEY,
@@ -28,7 +28,7 @@ const ModalEditaEstagiario = (props) => {
   };
 
   const alteraItem = (estagiario) => {
-    axios.put(`http://localhost:8080/estagiarios/${id}`, estagiario, {
+    axios.put(`https://api-sce.fly.dev/estagiarios/${id}`, estagiario, {
         headers: {
           "Content-Type": "application/json",
           "api-key": import.meta.env.VITE_API_KEY,

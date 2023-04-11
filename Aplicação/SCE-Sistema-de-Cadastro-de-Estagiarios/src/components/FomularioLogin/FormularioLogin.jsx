@@ -21,7 +21,7 @@ const FormularioLogin = () => {
     
     const getEmpresaData = async (id) => {
         try {
-        axios.get(`http://localhost:8080/empresas/${id}`, { headers: { 'api-key': import.meta.env.VITE_API_KEY } })
+        axios.get(`https://api-sce.fly.dev/empresas/${id}`, { headers: { 'api-key': import.meta.env.VITE_API_KEY } })
             .then((response) => {
 
                setEmpresa(response.data);
@@ -36,7 +36,7 @@ const FormularioLogin = () => {
   
     const onFinish = async ({ email, senha }) => {
         try {
-            const response = await axios.post('http://localhost:8080/login', { email, senha }, { headers: { 'api-key': import.meta.env.VITE_API_KEY, } });
+            const response = await axios.post('https://api-sce.fly.dev/login', { email, senha }, { headers: { 'api-key': import.meta.env.VITE_API_KEY, } });
             const { token } = response.data;
             localStorage.setItem('token', token);
             message.success('Login efetuado com sucesso!');

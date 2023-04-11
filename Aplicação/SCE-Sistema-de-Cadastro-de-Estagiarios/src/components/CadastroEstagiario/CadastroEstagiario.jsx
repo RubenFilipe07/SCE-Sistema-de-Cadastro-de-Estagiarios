@@ -12,7 +12,7 @@ const CadastroEstagiario = () => {
     const handleSubmit = async (values) => {
 
         try {
-            const response = await axios.post('http://localhost:8080/estagiarios', values, {
+            const response = await axios.post('https://api-sce.fly.dev/estagiarios', values, {
                 headers: {
                     'Content-Type': 'application/json',
                     'api-key': import.meta.env.VITE_API_KEY,

@@ -17,7 +17,7 @@ const ListaEstagiario = () => {
     const [idSelecionado, setIdSelecionado] = useState(0);
 
     const getEstagiarios = () => {
-        axios.get('http://localhost:8080/estagiarios', {
+        axios.get('https://api-sce.fly.dev/estagiarios', {
             headers: {
                 'Content-Type': 'application/json',
                 'api-key': import.meta.env.VITE_API_KEY,
@@ -36,7 +36,7 @@ const ListaEstagiario = () => {
     }, []);
 
     const deletaEstagiario = (id) => {
-        axios.delete(`http://localhost:8080/estagiarios/${id}`, {
+        axios.delete(`https://api-sce.fly.dev/estagiarios/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'api-key': import.meta.env.VITE_API_KEY,
